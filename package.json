@@ -1,0 +1,39 @@
+{
+  "name": "admiro",
+  "version": "1.0.0",
+  "main": "/template/index.html",
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:vite dev:pug dev:scss",
+    "dev:vite": "vite",
+    "dev:pug": "pug assets/pug/pages --pretty --out . --watch",
+    "dev:scss": "sass assets/scss/style.scss assets/css/style.css --watch --no-source-map --style=expanded",
+    "build:template": "vite build --mode template",
+    "build:starter-kit": "vite build --mode starter-kit",
+    "build": "npm run build:template && npm run build:starter-kit",
+    "build:pug": "pug assets/pug/pages --pretty --out .",
+    "scss:build": "sass assets/scss/style.scss assets/css/style.css --no-source-map --style=expanded",
+    "preview": "vite preview"
+  },
+  "author": "Pixelstrap",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "css-loader": "^6.11.0",
+    "cssnano": "^7.0.4",
+    "mini-css-extract-plugin": "^2.9.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.38",
+    "postcss-loader": "^8.1.1",
+    "pug": "^2.0.0",
+    "pug-cli": "^1.0.0-alpha6",
+    "pug-loader": "^2.4.0",
+    "sass": "1.77.6",
+    "sass-loader": "^13.3.3",
+    "style-loader": "^4.0.0",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "keywords": []
+}
