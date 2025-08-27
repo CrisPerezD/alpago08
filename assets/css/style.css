@@ -89,7 +89,7 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-color-rgb: 33, 37, 41;
-  --bs-body-bg: #fff;
+  --bs-body-bg: #fff;  
   --bs-body-bg-rgb: 255, 255, 255;
   --bs-emphasis-color: #000;
   --bs-emphasis-color-rgb: 0, 0, 0;
@@ -11871,7 +11871,7 @@ textarea.form-control-lg {
   --shape-border: #e5e5e5;
   --scrollbar-color: #aeaeae;
   --light-border: #dceee6;
-  --theme-default: #308e87;
+  --theme-default: #101126;
   --theme-secondary: #f39159;
   --body-color: #f9f7f6;
   --primary-color: #308e87;
@@ -11992,6 +11992,7 @@ textarea.form-control-lg {
   --bs-btn-color: #B6B0B0;
   --bs-btn-active-color: #B6B0B0;
   --bs-nav-tabs-link-hover-border-color: #e9ecef;
+  background-color: black !important;
 }
 
 /**=====================
@@ -47575,19 +47576,19 @@ label {
   border-radius: 5px;
 }
 .setting-sidebar .customizer-body .customizer-color ul .color-layout[data-attr=color-2] div {
-  background-color: #57375D;
+  background-color: #57375D;  
 }
 .setting-sidebar .customizer-body .customizer-color ul .color-layout[data-attr=color-3] div {
-  background-color: #0766AD;
+  background-color: #0766AD;  
 }
 .setting-sidebar .customizer-body .customizer-color ul .color-layout[data-attr=color-4] div {
-  background-color: #025464;
+  background-color: #025464;  
 }
 .setting-sidebar .customizer-body .customizer-color ul .color-layout[data-attr=color-5] div {
-  background-color: #884A39;
+  background-color: #884A39;  
 }
 .setting-sidebar .customizer-body .customizer-color ul .color-layout[data-attr=color-6] div {
-  background-color: #0C356A;
+  background-color: #0C356A;  
 }
 .setting-sidebar .customizer-footer {
   padding: 10px 20px;

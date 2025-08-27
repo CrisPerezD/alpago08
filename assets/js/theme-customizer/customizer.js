@@ -1,4 +1,33 @@
+
 (function ($) {
+  // ===== Seleccionar Mix por defecto si no hay tema guardado =====
+  if (!localStorage.getItem("color")) {
+    localStorage.setItem("color", "color-6");        // Tema Mix
+    localStorage.setItem("primary", "#0C356A");      // Color primario Mix
+    localStorage.setItem("secondary", "#FFC436");    // Color secundario Mix
+  }
+
+  // ===== Aplicar el tema guardado y marcar botón activo =====
+  var savedColor = localStorage.getItem("color");
+  if (savedColor) {
+    $("#color").attr("href", "../assets/css/" + savedColor + ".css");
+
+    var primary = localStorage.getItem("primary");
+    var secondary = localStorage.getItem("secondary");
+    if (primary) document.documentElement.style.setProperty("--theme-default", primary);
+    if (secondary) document.documentElement.style.setProperty("--theme-secondary", secondary);
+
+    $(".color-btn").removeClass("active");
+    if (savedColor === "color-6") {
+      $(".mix-setting").addClass("active");
+    } else if (savedColor === "color-1") {
+      $(".light-setting").addClass("active");
+    } else if (savedColor === "color-2") {
+      $(".dark-setting").addClass("active");
+    }
+  }
+
+
   if (localStorage.getItem("color"))
     $("#color").attr(
       "href",
@@ -10,19 +39,49 @@
   (function () {})();
 /**==COLOR_PICKER==**/
   $(document).ready(function () {
-    $(".customizer-color li").on("click", function () {
-      $(".customizer-color li").removeClass("active");
-      $(this).addClass("active");
-      var color = $(this).attr("data-attr");
-      var primary = $(this).attr("data-primary");
-      var secondary = $(this).attr("data-secondary");
-      localStorage.setItem("color", color);
-      localStorage.setItem("primary", primary);
-      localStorage.setItem("secondary", secondary);
-      localStorage.removeItem("dark");
-      $("#color").attr("href", "../assets/css/" + color + ".css");
-      $(".dark-only").removeClass("dark-only");
-      location.reload(true);
+    // $(".customizer-color li").on("click", function () {
+    //   $(".customizer-color li").removeClass("active");
+    //   $(this).addClass("active");
+    //   var color = $(this).attr("data-attr");
+    //   var primary = $(this).attr("data-primary");
+    //   var secondary = $(this).attr("data-secondary");
+    //   localStorage.setItem("color", color);
+    //   localStorage.setItem("primary", primary);
+    //   localStorage.setItem("secondary", secondary);
+    //   localStorage.removeItem("dark");
+    //   $("#color").attr("href", "../assets/css/" + color + ".css");
+    //   $(".dark-only").removeClass("dark-only");
+    //   location.reload(true);
+      $(".customizer-color li").on("click", function () {
+    $(".customizer-color li").removeClass("active");
+    $(this).addClass("active");
+
+    var color = $(this).attr("data-attr");
+    var primary = $(this).attr("data-primary");
+    var secondary = $(this).attr("data-secondary");
+
+    localStorage.setItem("color", color);
+    localStorage.setItem("primary", primary);
+    localStorage.setItem("secondary", secondary);
+
+    // Cambiar CSS de color
+    $("#color").attr("href", "../assets/css/" + color + ".css");
+
+    // Cambiar variables en tiempo real
+    if (primary) document.documentElement.style.setProperty("--theme-default", primary);
+    if (secondary) document.documentElement.style.setProperty("--theme-secondary", secondary);
+
+    // Marcar botón activo
+    $(".color-btn").removeClass("active");
+    if (color === "color-6") {
+      $(".mix-setting").addClass("active");
+    } else if (color === "color-1") {
+      $(".light-setting").addClass("active");
+    } else if (color === "color-2") {
+      $(".dark-setting").addClass("active");
+    }
+  });
+
     });
   });
   if (localStorage.getItem("primary") != null) {
