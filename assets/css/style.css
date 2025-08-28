@@ -47623,3 +47623,11 @@ label {
   --bs-body-color: white;    /* Texto general */
   --font-color: white;       /* Para textos extra si usan esta variable */
 }
+
+.page-sidebar i {
+  color: white !important;
+}
+
+.page-sidebar .stroke-icon {
+  stroke: white !important;
+}
