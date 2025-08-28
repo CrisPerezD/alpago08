@@ -27739,7 +27739,7 @@ input::-webkit-inner-spin-button {
 }
 .sidebar-menu .sidebar-list .sidebar-link.active h6, .sidebar-menu .sidebar-list .sidebar-link.active .h6 {
   /* color: var(--theme-default); */
-  color: #00FF7F;
+  color: #60DB61;
 }
 .sidebar-menu .sidebar-list .sidebar-link .stroke-icon {
   color: var(--body-font-color);
@@ -47630,4 +47630,8 @@ label {
 
 .page-sidebar .stroke-icon {
   stroke: white !important;
+}
+
+#content-area {
+  padding-top: 20px;
 }
