@@ -1,0 +1,71 @@
+<style>
+    .form-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem; /* Espacio entre h4 e input */
+        padding-bottom: 0.5rem; /* Espacio antes de la línea */
+        margin-bottom: 0.5rem;  /* Espacio después de la línea */
+        border-bottom: 1px solid rgba(0,0,0,0.1); /* Línea gris clara */
+    }
+
+    /* El ancho de todos los h4 será igual al del más largo */
+    .form-row h4 {
+        flex: 0 0 auto; /* No se expande */
+        min-width: 180px; /* Ajusta según el más largo */
+        margin: 0; /* Elimina márgenes extra */
+    }
+
+    /* Los inputs ocuparán todo el espacio sobrante */
+    .form-row .form-control,
+    .form-row textarea,
+    .form-row select {
+        flex: 1 1 auto;
+    }
+
+    /* Quitar línea en el último elemento */
+    .form-row:last-child {
+    border-bottom: none;
+    }
+</style>
+
+
+<div class="container mt-4">    
+
+    <form>
+        <!-- Información Básica -->
+        <div class="card">
+            <div class="card-header bg-primary text-white rounded-3 mb-4">
+                <h4 class="fw-bold mb-0">Agregar Departamento</h4>
+            </div>
+            <div class="card-body">
+
+                <!-- Nombre del Departamento -->
+                <div class="mb-3 form-row">
+                    <h4 class="me-3 mb-o">Nombre del Departamento:</h4>
+                    <input type="text" id="nombreDepartamento" class="form-control border-success">
+                </div>
+                <tr></tr>
+                <!-- Descripción -->
+                <div class="mb-3 form-row">
+                    <h4 class="me-3 mb-0">Descripción:</h4>
+                    <textarea id="descripcion" rows="3" class="form-control"></textarea>
+                </div>
+                <!-- Activa -->
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="activa" checked>
+                    <label for="activa" class="form-check-label">Activa</label>
+                </div>
+            </div>
+        </div>        
+        <!-- Botones -->
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-primary">Guardar y agregar otro</button>
+            <button type="button" class="btn btn-primary">Guardar y continuar editando</button>
+        </div>
+
+    </form>
+</div>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">

@@ -1,0 +1,121 @@
+<style>
+    .form-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        /* Espacio entre h4 e input */
+        padding-bottom: 0.5rem;
+        /* Espacio antes de la línea */
+        margin-bottom: 0.5rem;
+        /* Espacio después de la línea */
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        /* Línea gris clara */
+    }
+
+    /* El ancho de todos los h4 será igual al del más largo */
+    .form-row h5 {
+        flex: 0 0 auto;
+        /* No se expande */
+        min-width: 190px;
+        /* Ajusta según el más largo */
+        margin: 0;
+        /* Elimina márgenes extra */
+    }
+
+    /* Los inputs ocuparán todo el espacio sobrante */
+    .form-row .form-control,
+    .form-row textarea,
+    .form-row select {
+        flex: 1 1 auto;
+        max-width: 300px;
+    }
+
+    /* Quitar línea en el último elemento */
+    .form-row:last-child {
+        border-bottom: none;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="card shadow-sm border-0 rounded-4 p-3">
+
+        <!-- Título de la tarjeta -->
+        <div class="card-header bg-primary text-white rounded-3 mb-4">
+            <h3 class="fw-bold mb-0">Agregar Puesto</h3>
+        </div>
+
+        <form>
+            <!-- Nombre del Puesto -->
+            <div class="mb-3 form-row">
+                <h5 for="nombrePuesto" class="form-label fw-bold">Nombre del Puesto:</h5>
+                <input type="text" class="form-control" id="nombrePuesto">
+            </div>
+
+            <!-- Departamento -->
+            <div class="mb-3 form-row">
+                <h5 for="departamento" class="form-label fw-bold">Departamento:</h5>
+                <div class="d-flex align-items-center">
+                    <select id="departamento" class="form-select w-auto">
+                        <option selected disabled>----------</option>
+                        <option value="produccion">Producción</option>
+                        <option value="administracion">Administración</option>
+                    </select>
+
+                    <!-- Iconos de acciones -->
+                    <button type="button" class="btn btn-outline-secondary ms-2" title="Editar">
+                        <i class="bi bi-pencil"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-success ms-1" title="Agregar">
+                        <i class="bi bi-plus-lg"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-danger ms-1" title="Eliminar">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-info ms-1" title="Ver">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Nivel del Puesto -->
+            <div class="mb-3 form-row">
+                <h5 for="nivelPuesto" class="form-label fw-bold">Nivel del Puesto:</h5>
+                <select class="form-select" id="nivelPuesto">
+                    <option selected disabled>Nivel de Entrada</option>
+                    <option value="1">Nivel 1</option>
+                    <option value="2">Nivel 2</option>
+                    <option value="3">Nivel 3</option>
+                </select>
+            </div>
+
+            <!-- Descripción del Puesto -->
+            <div class="mb-3 form-row">
+                <h5 for="descripcionPuesto" class="form-label fw-bold">Descripción del Puesto:</h5>
+                <textarea class="form-control" id="descripcionPuesto"></textarea>
+            </div>
+
+            <!-- Rango Salarial -->
+            <div class="mb-3 form-row">
+                <h5 for="rangoSalarial" class="form-label fw-bold">Rango Salarial:</h5>
+                <input type="text" class="form-control" id="rangoSalarial" placeholder="No definido" disabled>
+            </div>
+
+            <!-- Estatus -->
+            <div class="mb-3 form-row checkbox">
+               <checkbox class="form-check">
+                    <input type="checkbox" class="form-check-input" id="estatusActivo" checked>
+                    <label class="form-check-label" for="estatusActivo">Activo</label>
+                </checkbox>
+            </div>
+
+            <!-- Botones -->
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-primary">Guardar y agregar otro</button>
+                <button type="button" class="btn btn-primary">Guardar y continuar editando</button>
+                <button href="form-avyna.html" type="button"
+                    class="btn btn-primary">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

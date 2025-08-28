@@ -1,0 +1,102 @@
+<h2>Gestión de Documentos</h2>
+
+<div class="container-fluid">
+    <div class="card shadow-sm border-0 rounded-4 p-3">
+
+        <!-- Título de la tarjeta -->
+        <div class="card-header bg-primary text-white rounded-3 mb-4">
+            <h3 class="fw-bold mb-0">Selecciona el documento a modificar</h3>
+        </div>
+
+        <!-- Barra de búsqueda y botones -->
+        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+            <form class="d-flex align-items-center gap-2 mb-2 mb-md-0">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input class="form-control" type="text" placeholder="Buscar..." style="min-width: 250px;">
+                <button class="btn btn-outline-primary"><i data-feather="upload"></i> Buscar</button>
+            </form>
+
+            <div class="d-flex gap-2">
+                <a href="#" data-page="pages/documentos.html" class="btn btn-primary" id="btnAgregar">
+                    <i data-feather="plus-square"></i> Agregar Documento
+                </a>
+            </div>
+        </div>
+
+        <!-- Tabla -->
+        <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+                <h4 class="me-3">Acción:</h4>
+                <select class="form-select w-auto me-2">
+                    <option selected disabled>Seleccione una acción</option>
+                    <option value="editar">Editar</option>
+                    <option value="eliminar">Eliminar</option>
+                    <option value="activar">Activar</option>
+                    <option value="desactivar">Desactivar</option>
+                </select>
+                <button class="btn btn-primary">Aplicar</button>
+            </div>
+
+            <!-- Tabla para mostrar documentos -->
+            <div class="table-responsive">
+                <table id="tablaDocumentos" class="table table-bordered table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>TIPO DE DOCUMENTO</th>
+                            <th>ESTATUS INICIAL</th>
+                            <th>CREADO POR</th>
+                            <th>FECHA DE CREACIÓN</th>
+                            <th>ACTUALIZADO POR</th>
+                            <th>ÚLTIMA ACTUALIZACIÓN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><a href="#">Cotización</a></td>
+                            <td>Borrador</td>
+                            <td>-</td>
+                            <td>Abril 18, 2025, 12:38 a.m.</td>
+                            <td>-</td>
+                            <td>Abril 18, 2025, 12:38 a.m.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><a href="#">Pedido</a></td>
+                            <td>Borrador</td>
+                            <td>-</td>
+                            <td>Abril 18, 2025, 12:38 a.m.</td>
+                            <td>-</td>
+                            <td>Abril 18, 2025, 12:38 a.m.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Contador -->
+                <div class="mt-2 fw-bold text-primary">
+                    <span id="contadorFilas"></span> Tipos de Documento
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function inicializarContador() {
+    const tabla = document.getElementById("tablaDocumentos");
+    const contador = document.getElementById("contadorFilas");
+
+    if (tabla && contador) {
+        const tbody = tabla.querySelector("tbody");
+        const filas = tbody.getElementsByTagName("tr").length;
+        contador.textContent = filas;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", inicializarContador);
+
+const observer = new MutationObserver(() => {
+    inicializarContador();
+});
+observer.observe(document.body, { childList: true, subtree: true });
+</script>

@@ -35,8 +35,9 @@
   <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick.css" />
   <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick-theme.css" />
   <!-- App css -->
-  <link id="color" rel="stylesheet" href="../assets/css/color-6.css" media="screen" />
+  <link id="color" rel="stylesheet" href="../assets/css/color-1.css" media="screen" />
   <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -351,7 +352,7 @@
     <!-- Page Body Start-->
     <div class="page-body-wrapper">
       <!-- Page sidebar start-->
-      <aside class="page-sidebar">
+      <aside class="page-sidebar" style="background-color: #102a42;">
         <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
         <div class="main-sidebar" id="main-sidebar">
           <ul class="sidebar-menu" id="simple-bar">
@@ -363,9 +364,10 @@
             <li class="sidebar-main-title">
               <div>
                 <!-- <h5 class="lan-1 f-w-700 sidebar-title">MENÚ</h5> -->
-                <h5 class="f-w-700 sidebar-title pt-3">MENÚ</h5>
+                <h5 class="f-w-700 sidebar-title pt-3" style="color: white;">MENÚ</h5>
               </div>
             </li>
+            
             <li class="sidebar-list"> <i class="fa-solid fa-thumbtack"></i><a class="sidebar-link" href="index.html">
                 <svg class="stroke-icon">
                   <use href="../assets/svg/iconly-sprite.svg#Home"></use>
@@ -374,15 +376,15 @@
               </a>
             </li>
             <li class="sidebar-list"> <i class="fa-solid fa-thumbtack"></i><a class="sidebar-link" href="#"
-                data-page="index.html">
+                data-page="pages/agregar_puesto.html">
                 <i class="fa-regular fa-user"></i>
                 <!-- <svg class="stroke-icon">
                   <use href="../assets/svg/iconly-sprite.svg#Star-kit"></use>
                 </svg> -->
-                <h6 class="f-w-600">Agregar Alumno</h6></a>
-            </li>
+                <h6 class="f-w-600">Agregar Alumno</h6>
+            </a></li>
             <li class="sidebar-list"> <i class="fa-solid fa-thumbtack"></i><a class="sidebar-link" href="#"
-                data-page="index.html">
+                data-page="">
                 <i class="iconly-Category icli"></i>
                 <!-- <svg class="stroke-icon">
                   <use href="../assets/svg/iconly-sprite.svg#Star-kit"></use>
@@ -390,7 +392,7 @@
                 <h6 class="f-w-600">Agregar Categoría</h6></a>
             </li>
             <li class="sidebar-list"> <i class="fa-solid fa-thumbtack"></i><a class="sidebar-link" href="#"
-                data-page="index.html">
+                data-page="#">
                 <i class="iconly-Plus icli"></i>
                 <!-- <svg class="stroke-icon">
                   <use href="../assets/svg/iconly-sprite.svg#Star-kit"></use>
@@ -460,13 +462,13 @@
       </aside>
       <!-- Page sidebar end-->
 
-      <!-- ***************** Inicio - bienvenida *********************** -->
+      <!-- ***************** Contenido dinámico *********************** -->
       <!-- <main id="content-area" class="p-4">
         <h2>Bienvenido</h2>
         <p>Selecciona una opción del menú para empezar.</p>
       </main> -->
 
-      <div class="page-body">
+      <div class="page-body" id="content-area">
         <div class="container-fluid">
           <div class="page-title">
             <div class="row">
@@ -485,7 +487,6 @@
           </div>
         </div>
         <!-- Container-fluid starts-->
-
       </div>
       <footer class="footer">
         <div class="container-fluid">
@@ -530,6 +531,11 @@
   <!-- slick-->
   <script src="../assets/js/slick/slick.min.js"></script>
   <script src="../assets/js/slick/slick.js"></script>
+  <!-- form_wizard-->
+  <script src="../assets/js/form-wizard/image-upload.js"></script>
+  <script src="../assets/js/form-wizard/form-wizard.js"></script>
+  <!-- image upload-->
+  <script src="../assets/js/form-wizard/image-upload.js"></script>
   <!-- data_table-->
   <script src="../assets/js/js-datatables/datatables/jquery.dataTables.min.js"></script>
   <!-- page_datatable-->
@@ -548,6 +554,9 @@
   <script src="../assets/js/dashboard/dashboard_1.js"></script>
   <!-- custom script -->
   <script src="../assets/js/script.js"></script>
+<!-- pages -->
+  <script src="../assets/js/fetch-pages.js"></script>
+
 </body>
 
 </html>

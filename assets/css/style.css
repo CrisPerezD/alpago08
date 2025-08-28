@@ -105,7 +105,8 @@
   --bs-link-color: #0d6efd;
   --bs-link-color-rgb: 13, 110, 253;
   --bs-link-decoration: underline;
-  --bs-link-hover-color: #0a58ca;
+  /* --bs-link-hover-color: #0a58ca; */
+  --bs-link-hover-color: #cad9ef;
   --bs-link-hover-color-rgb: 10, 88, 202;
   --bs-code-color: #d63384;
   --bs-highlight-color: #212529;
@@ -27675,7 +27676,8 @@ input::-webkit-inner-spin-button {
   color: var(--theme-default);
 }
 .sidebar-menu .sidebar-list:hover .sidebar-link h6, .sidebar-menu .sidebar-list:hover .sidebar-link .h6 {
-  color: var(--theme-default);
+  /* color: var(--theme-default); */
+  color: var(--gray-60);
 }
 .sidebar-menu .sidebar-list .iconly-Arrow-Right-2 {
   transition: all 0.4s ease-in-out;
@@ -27711,14 +27713,14 @@ input::-webkit-inner-spin-button {
 .sidebar-menu .sidebar-list:hover i.fa-thumbtack {
   visibility: visible;
   cursor: pointer;
-  opacity: 1;
+  opacity: 1;  
 }
 .sidebar-menu .sidebar-list:hover .sidebar-link {
   background-color: rgba(48, 142, 135, 0.2);
-  color: var(--theme-default);
+  color: var(--theme-default);  
 }
 .sidebar-menu .sidebar-list:hover .sidebar-link .stroke-icon {
-  stroke: var(--theme-default);
+  stroke: var(--theme-default); 
 }
 .sidebar-menu .sidebar-list .sidebar-link {
   padding: 12px 10px;
@@ -27736,7 +27738,8 @@ input::-webkit-inner-spin-button {
   transform: rotate(90deg) !important;
 }
 .sidebar-menu .sidebar-list .sidebar-link.active h6, .sidebar-menu .sidebar-list .sidebar-link.active .h6 {
-  color: var(--theme-default);
+  /* color: var(--theme-default); */
+  color: #00FF7F;
 }
 .sidebar-menu .sidebar-list .sidebar-link .stroke-icon {
   color: var(--body-font-color);
@@ -27911,7 +27914,7 @@ input::-webkit-inner-spin-button {
   display: block !important;
 }
 .page-wrapper.horizontal-sidebar .page-body-wrapper .page-sidebar .main-sidebar .sidebar-menu .sidebar-list.active .sidebar-submenu a.active {
-  color: var(--theme-default);
+  color: var(--theme-default);  
 }
 .page-wrapper.horizontal-sidebar .page-body-wrapper .page-sidebar .main-sidebar .sidebar-menu .sidebar-list.active .sidebar-link {
   background-color: transparent;
@@ -47609,4 +47612,14 @@ label {
 }
 .setting-sidebar .customizer-footer .btn svg {
   transition: color 0.3s;
+}
+
+.page-sidebar {
+  /* Color de fondo */
+  background-color: #102a42;
+
+  /* Variables solo para el sidebar */
+  --bs-heading-color: white; /* Titulares (h1, h2, h3...) */
+  --bs-body-color: white;    /* Texto general */
+  --font-color: white;       /* Para textos extra si usan esta variable */
 }

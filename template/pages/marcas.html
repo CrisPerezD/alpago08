@@ -1,0 +1,72 @@
+<h2>Gestión de Marcas</h2>
+
+<div class="container-fluid">
+    <div class="card shadow-sm border-0 rounded-4 p-3">
+
+        <!-- Título de la tarjeta -->
+        <div class="card-header bg-primary text-white rounded-3 mb-4">
+            <h3 class="fw-bold mb-0">Selecciona la marca a modificar</h3>
+        </div>
+
+        <!-- Barra de búsqueda y botones -->
+        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+            <form class="d-flex align-items-center gap-2 mb-2 mb-md-0">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input class="form-control" type="text" placeholder="Buscar..." style="min-width: 250px;">
+                <button class="btn btn-outline-primary"><i data-feather="upload"></i> Buscar</button>
+            </form>
+
+            <div class="d-flex gap-2">
+                <a href="#" data-page="pages/agregar_marca.html" class="btn btn-primary"><i data-feather="plus-square"></i> Agregar Marca</a>
+            </div>
+        </div>
+
+        <!-- Tabla -->
+        <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+                <h4 class="me-3">Acción o acciones:</h4>
+                <!-- Lista desplegable de acciones -->
+                <select class="form-select w-auto me-2">
+                    <option selected disabled>Seleccione una acción</option>
+                    <option value="editar">Editar</option>
+                    <option value="eliminar">Eliminar</option>
+                    <option value="activar">Activar</option>
+                    <option value="desactivar">Desactivar</option>
+                </select>
+
+                <!-- Botón para ejecutar la acción -->
+                <button class="btn btn-primary">Aplicar</button>
+            </div>
+
+            <!-- Tabla para mostrar marcas -->
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>Código</th>
+                            <th>Nombre de la Marca</th>
+                            <th>Logo</th>
+                            <th>Sitio Web</th>
+                            <th>Correo de Contacto</th>
+                            <th>Activa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Ejemplo de fila (después será dinámico desde la base de datos) -->
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><a href="#">MR0001</a></td>
+                            <td>Avyna</td>
+                            <td>Sin logo</td>
+                            <td>No disponible</td>
+                            <td>-</td>
+                            <td><span class="text-success">&#10003;</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,169 @@
+<style>
+  .form-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* Espacio entre h4 e input */
+    padding-bottom: 0.5rem;
+    /* Espacio antes de la línea */
+    margin-bottom: 0.5rem;
+    /* Espacio después de la línea */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* Línea gris clara */
+  }
+
+  /* El ancho de todos los h4 será igual al del más largo */
+  .form-row h5 {
+    flex: 0 0 auto;
+    /* No se expande */
+    min-width: 170px;
+    /* Ajusta según el más largo */
+    margin: 0;
+    /* Elimina márgenes extra */
+  }
+
+  /* Los inputs ocuparán todo el espacio sobrante */
+  .form-row .form-control,
+  .form-row textarea,
+  .form-row select {
+    flex: 1 1 auto;
+    max-width: 300px;
+  }
+
+  /* Quitar línea en el último elemento */
+  .form-row:last-child {
+    border-bottom: none;
+  }
+</style>
+
+<!-- Formulario -->
+<div class="page-body">
+  <div class="container-fluid">
+    <div class="page-title">
+      <div class="row">
+        <div class="col-sm-6 col-12">
+          <!-- Título principal -->
+          <h2>Agregar Marca</h2>
+        </div>
+        <div class="col-sm-6 col-12">
+          <!-- Breadcrumb -->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="form-avyna.html"><i class="iconly-Home icli svg-color"></i></a></li>
+            <li class="breadcrumb-item">Form Layout</li>
+            <li class="breadcrumb-item active">Agregar Marca</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="theme-form">
+    <!-- Información Básica -->
+    <div class="card mb-4 shadow-sm border-0 rounded-4">
+      <div class="card-header bg-primary text-white">
+        <h4 class="fw-bold mb-0">Información Básica</h4>
+      </div>
+      <div class="card-body">
+        <!-- Código -->
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Código:</h5>
+          <div class="col-md-5">
+            <input type="text" id="codigo" class="form-control" value="-" readonly style="max-width: 400px;">
+            <small class="text-muted">Este código se genera automáticamente y no puede ser modificado.</small>
+          </div>
+        </div>
+
+        <!-- Nombre de la Marca -->
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Nombre de la Marca:</h5>
+          <input type="text" class="form-control" placeholder="Ingrese el nombre de la marca" required>
+        </div>
+
+        <!-- Slug -->
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Slug:</h5>
+          <div class="col-md-5">
+            <input type="text" class="form-control" value="-" readonly>
+            <small class="text-muted">URL amigable, se genera automáticamente.</small>
+          </div>
+        </div>
+
+        <!-- Descripción -->
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Descripción</h5>
+          <textarea class="form-control" rows="3" placeholder="Escriba una breve descripción"></textarea>
+        </div>
+
+        <!-- Logo -->
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Logo</h5>
+          <input class="form-control" type="file">
+          <small class="text-muted">No se ha elegido ningún archivo</small>
+        </div>
+
+        <!-- Estado Activa -->
+        <div class="mb-3">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="activaCheck" checked>
+            <label class="form-check-label" for="activaCheck">Activa</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Información de contacto -->
+    <div class="card mb-4 shadow-sm border-0 rounded-4">
+      <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Información de contacto:</h4>
+      </div>
+      <div class="card-body">
+        <!-- Sitio web -->
+        <div class="mb-3 form-row">
+          <h5 class="form-label fw-bold">Sitio Web:</h5>
+          <input type="url" class="form-control" placeholder="https://www.ejemplo.com">
+        </div>
+
+        <!-- Correo de contacto -->
+        <div class="mb-3 form-row">
+          <h5 class="form-label fw-bold">Correo de contacto:</h5>
+          <input type="email" class="form-control" placeholder="correo@ejemplo.com">
+        </div>
+
+        <!-- Teléfono de contacto -->
+        <div class="mb-3 form-row">
+          <h5 class="form-label fw-bold">Teléfono de contacto:</h5>
+          <input type="tel" class="form-control" placeholder="+52 123 456 7890">
+        </div>
+
+        <!-- País de origen -->
+        <div class="mb-3 form-row">
+          <h5 class="form-label fw-bold">País de Origen</h5>
+          <select class="form-select">
+            <option selected>Seleccione un país</option>
+            <option>México</option>
+            <option>Estados Unidos</option>
+            <option>España</option>
+            <option>Argentina</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notas e Información Adicional -->
+    <div class="card mb-4 shadow-sm border-0 rounded-4">
+      <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Notas e Información Adicional</h4>
+      </div>
+      <div class="card-body">
+        <textarea class="form-control" rows="4" placeholder="Escriba notas o información adicional"></textarea>
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="d-flex gap-2">
+      <button type="submit" class="btn btn-primary">Salvar</button>
+      <button type="submit" class="btn btn-primary">Salvar y agregar otro</button>
+      <button type="submit" class="btn btn-primary text-white">Salvar y continuar editando</button>
+    </div>
+  </form>
+</div>

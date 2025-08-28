@@ -1,0 +1,210 @@
+<style>
+    .form-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        /* Espacio entre h4 e input */
+        padding-bottom: 0.5rem;
+        /* Espacio antes de la línea */
+        margin-bottom: 0.5rem;
+        /* Espacio después de la línea */
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        /* Línea gris clara */
+    }
+
+    /* El ancho de todos los h4 será igual al del más largo */
+    .form-row h5 {
+        flex: 0 0 auto;
+        /* No se expande */
+        min-width: 170px;
+        /* Ajusta según el más largo */
+        margin: 0;
+        /* Elimina márgenes extra */
+    }
+
+    /* Los inputs ocuparán todo el espacio sobrante */
+    .form-row .form-control,
+    .form-row textarea,
+    .form-row select {
+        flex: 1 1 auto;
+        max-width: 300px;
+    }
+
+    /* Espacio ligero entre botones dentro del btn-group */
+    .btn-group .btn:not(:first-child) {
+        margin-left: 4px !important;
+        /* Ajusta el valor si quieres más o menos espacio */
+    }
+
+    /* Quitar línea en el último elemento */
+    .form-row:last-child {
+        border-bottom: none;
+    }
+</style>
+
+<!-- Formulario -->
+<div class="page-body">
+    <div class="container-fluid">
+        <div class="page-title">
+            <div class="row">
+                <div class="col-sm-6 col-12">
+                    <!-- Título principal -->
+                    <h2>Agregar Producto</h2>
+                </div>
+                <div class="col-sm-6 col-12">
+                    <!-- Breadcrumb -->
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="form-avyna.html"><i
+                                    class="iconly-Home icli svg-color"></i></a></li>
+                        <li class="breadcrumb-item">Form Layout</li>
+                        <li class="breadcrumb-item active">Agregar Producto</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form class="theme-form">
+        <!-- Información Básica -->
+        <div class="card mb-4 shadow-sm border-0 rounded-4">
+            <div class="card-header bg-primary text-white">
+                <h4 class="fw-bold mb-0">Información Básica</h4>
+            </div>
+            <div class="card-body">
+                <!-- Código -->
+                <div class="mb-3 form-row">
+                    <h5 class="me-3 mb-0">Código:</h5>
+                    <div class="col-md-5">
+                        <input type="text" id="codigo" class="form-control" value="-" readonly
+                            style="max-width: 400px;">
+                        <small class="text-muted">Este código se genera automáticamente y no puede ser
+                            modificado.</small>
+                    </div>
+                </div>
+
+                <!-- Nombre del Producto -->
+                <div class="mb-3 form-row">
+                    <h5 class="me-3 mb-0">Nombre del Producto:</h5>
+                    <input type="text" id="nombreProducto" class="form-control"
+                        placeholder="Ingrese el nombre del producto" required>
+                </div>
+
+                <!-- Descripción -->
+                <div class="mb-3 form-row">
+                    <h5 class="me-3 mb-0">Descripción</h5>
+                    <textarea class="form-control" rows="3" placeholder="Escriba una breve descripción"></textarea>
+                </div>
+
+                <!-- Imagen -->
+                <div class="mb-3 form-row">
+                    <h5 class="me-3 mb-0">Imagen</h5>
+                    <input id="imagen" class="form-control" type="file">
+                    <small class="text-muted">No se ha elegido ningún archivo</small>
+                </div>
+
+                <!-- Estado Activo -->
+                <div class="mb-3">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="activaCheck" checked>
+                        <label class="form-check-label" for="activaCheck">Activo</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Clasificación -->
+        <div class="card mb-4 shadow-sm border-0 rounded-4">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Clasificación:</h4>
+            </div>
+            <div class="card-body">
+                <!-- Categoría -->
+                <div class="mb-3 form-row">
+                    <h5 class="form-label fw-bold">Categoría:</h5>
+                    <select class="form-select">
+                        <option selected>Seleccione una categoría</option>
+                        <option>Electrónica</option>
+                        <option>Ropa</option>
+                        <option>Hogar</option>
+                        <option>Juguetes</option>
+                    </select>
+                    <div class="btn-group ms-0">
+                        <button type="button" class="btn btn-outline-secondary ms-0" title="Editar">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-success ms-0" title="Agregar">
+                            <i class="bi bi-plus-lg"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-danger ms-0" title="Eliminar">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-info ms-0" title="Ver">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Marca -->
+                <div class="mb-3 form-row">
+                    <h5 class="form-label fw-bold">Marca:</h5>
+                    <select class="form-select">
+                        <option selected>Seleccione una marca</option>
+                        <option>Samsung</option>
+                        <option>Apple</option>
+                        <option>LG</option>
+                        <option>Sony</option>
+                    </select>
+                    <div class="btn-group ms-0">
+                        <button type="button" class="btn btn-outline-secondary ms-0" title="Editar">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-success ms-0" title="Agregar">
+                            <i class="bi bi-plus-lg"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-danger ms-0" title="Eliminar">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-info ms-0 " title="Ver">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Stock y Precios -->
+            <div class="card mb-4 shadow-sm border-0 rounded-4">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Stock y Precios</h4>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3 form-row">
+                        <h5 class="me-3 mb-0">Stock:</h5>
+                        <div class="col-md-5">
+                            <input type="number" id="stock" class="form-control" value="0" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 form-row">
+                        <h5 class="me-3 mb-0">Precio Salón:</h5>
+                        <input type="number" id="precioSalon" class="form-control" value="0.00">
+                        <h5 class="me-3 mb-0">Precio Público:</h5>
+                        <input type="number" id="precioPublico" class="form-control" value="0.00">
+                    </div>
+                    <!-- Puntos -->
+                    <div class="mb-3 form-row">
+                        <h5 class="me-3 mb-0">Puntos:</h5>
+                        <input type="number" class="form-control" id="puntos" rows="3" value="0"></input>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="submit" class="btn btn-primary">Salvar y agregar otro</button>
+                <button type="submit" class="btn btn-primary text-white">Salvar y continuar editando</button>
+            </div>
+    </form>
+</div>

@@ -1,0 +1,132 @@
+<style>
+    .form-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        /* Espacio entre h4 e input */
+        padding-bottom: 0.5rem;
+        /* Espacio antes de la línea */
+        margin-bottom: 0.5rem;
+        /* Espacio después de la línea */
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        /* Línea gris clara */
+    }
+
+    /* El ancho de todos los h4 será igual al del más largo */
+    .form-row h5 {
+        flex: 0 0 auto;
+        /* No se expande */
+        min-width: 170px;
+        /* Ajusta según el más largo */
+        margin: 0;
+        /* Elimina márgenes extra */
+    }
+
+    /* Los inputs ocuparán todo el espacio sobrante */
+    .form-row .form-control,
+    .form-row textarea,
+    .form-row select {
+        flex: 1 1 auto;
+        max-width: 300px;
+    }
+
+    /* Quitar línea en el último elemento */
+    .form-row:last-child {
+        border-bottom: none;
+    }
+
+    .table td:first-child,
+    .table th:first-child {
+        white-space: nowrap;
+        /* Evita que el texto se parta */
+        width: 1%;
+        min-width: 185px;
+        /* Se ajusta al contenido */
+    }
+
+    .table td:last-child {
+        width: 100%;
+        /* El resto del espacio */
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="card shadow-sm border-0 rounded-4 p-3">
+
+        <!-- Título de la tarjeta -->
+        <div class="card-header bg-primary text-white rounded-3 mb-4">
+            <h3 class="fw-bold mb-0">Agregar Estatus</h3>
+        </div>
+
+        <form>
+            <!-- Nombre del Estatus -->
+            <div class="mb-3 form-row">
+                <h5 for="nombreEstatus" class="form-label fw-bold">Nombre del Estatus:</h5>
+                <input type="text" class="form-control" id="nombreEstatus">
+            </div>
+
+            <!-- Tipo de Documento -->
+            <div class="mb-3 form-row">
+                <h5 for="tipoDocumento" class="form-label fw-bold">Tipo de Documento:</h5>
+                <div class="d-flex align-items-center">
+                    <select id="tipoDocumento" class="form-select w-auto">
+                        <option selected disabled>----------</option>
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+
+                    <!-- Iconos de acciones -->
+                    <button type="button" class="btn btn-outline-secondary ms-2" title="Editar">
+                        <i class="bi bi-pencil"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-success ms-1" title="Agregar">
+                        <i class="bi bi-plus-lg"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-danger ms-1" title="Eliminar">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-info ms-1" title="Ver">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Orden -->
+            <div class="mb-3 form-row">
+                <h5 for="orden" class="form-label fw-bold">Orden:</h5>
+                <input type="number" class="form-control" id="orden" value="0">
+            </div>
+
+            <!-- Datos de auditoría -->
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>Creado por:</th>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <th>Actualizado por:</th>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <th>Fecha de Creación:</th>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <th>Última Actualización:</th>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Botones -->
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-primary">Guardar y agregar otro</button>
+                <button type="button" class="btn btn-primary">Guardar y continuar editando</button>
+                <button href="#" data-page="pages/gestion_de_documentos.html" type="button"
+                    class="btn btn-primary">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,192 @@
+<style>
+    .form-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        /* Espacio entre h4 e input */
+        padding-bottom: 0.3rem;
+        /* Espacio antes de la línea */
+        margin-bottom: 0.3rem;
+        /* Espacio después de la línea */
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        /* Línea gris clara */
+    }
+
+    /* El ancho de todos los h4 será igual al del más largo */
+    .form-row h5 {
+        flex: 0 0 auto;
+        /* No se expande */
+        min-width: 250px;
+        /* Ajusta según el más largo */
+        margin: 0;
+        /* Elimina márgenes extra */
+    }
+
+    /* Los inputs ocuparán todo el espacio sobrante */
+    .form-row .form-control,
+    .form-row textarea,
+    .form-row select {
+        flex: 1 1 auto;
+        max-width: 350px;
+    }
+
+    /* Quitar línea en el último elemento */
+    .form-row:last-child {
+        border-bottom: none;
+    }
+
+    /* Reducir espacios entre títulos de tarjeta y contenido */
+    .card-header {
+        margin-bottom: 0.5rem !important;
+        /* En lugar de mb-4 grande */
+    }
+
+    /* Reducir padding dentro de las tarjetas */
+    .card-body {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    /* Evitar márgenes grandes debajo de h4 */
+    .card-header h4 {
+        margin-bottom: 0 !important;
+    }
+
+    /* Reducir espacio superior antes del h2 */
+    .page-title {
+        margin-top: 0.5rem !important;
+        /* Antes era más grande */
+        padding-top: 0 !important;
+    }
+
+    /* Quitar margen grande del h2 */
+    .page-title h2 {
+        margin-top: 0 !important;
+        margin-bottom: 0.5rem;
+        /* Margen inferior reducido */
+    }
+</style>
+
+
+<div class="container mt-4">
+    <h2 class="mb-3">Agregar Condiciones de Pago</h2>
+
+    <form>
+
+        <!-- Información Básica -->
+        <div class="card">
+            <div class="card-header bg-primary text-white rounded-3 mb-4">
+                <h4 class="fw-bold mb-0">Información Básica</h4>
+            </div>
+            <div class="card-body">
+
+                <!-- Código -->
+                <div class="mb-3 form-row">
+                    <h5 class="me-3 mb-o">Código:</h5>
+                    <input type="text" id="codigo" class="form-control border-success">
+                </div>
+                <tr></tr>
+
+                <!-- Nombre -->
+                <div class="mb-3 form-row">
+                    <h5 class="me-3 mb-0">Nombre:</h5>
+                    <input type="text" id="nombre" class="form-control">
+                </div>
+
+                <!-- Activo -->
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="activo" checked>
+                    <label for="activo" class="form-check-label">Activo</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Condiciones de Pago -->
+        <div class="card mb-3">
+            <div class="card-header bg-primary text-white rounded-3 mb-4">
+                <h4 class="fw-bold mb-0">Condiciones de Pago</h4>
+            </div>
+            <div class="card-body">
+
+                <!-- Plazo -->
+                <div class="mb-3 form-row">
+                    <h5 class="me-3 mb-0">Plazo en días:</h5>
+                    <input type="number" id="plazo" class="form-control" style="max-width: 125px;">
+                </div>
+
+                <!-- Frecuencia de Pago -->
+                <div class="mb-3 form-row">
+                    <h5 class="me-3 mb-0">Frecuencia de Pago:</h5>
+                    <div class="d-flex flex-column">
+                        <select id="frecuencia" class="form-select w-auto">
+                            <option value="0">Mensual</option>
+                            <option value="1">Quincenal</option>
+                            <option value="2">Semanal</option>
+                            <option value="3">Diaria</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Tipo de Pago -->
+                <div class="mb-3 form-row">
+                    <h5 class="me-3 mb-0">Tipo de Pago:</h5>
+                    <div class="d-flex flex-column">
+                        <select id="tipoPago" class="form-select w-auto">
+                            <option value="0">Efectivo</option>
+                            <option value="1">Tarjeta de Crédito</option>
+                            <option value="2">Transferencia Bancaria</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Descuentos -->
+        <div class="card">
+            <div class="card-header bg-primary text-white rounded-3 mb-4">
+                <h4 class="fw-bold mb-0">Descuentos</h4>
+            </div>
+            <div class="card-body">
+                <!-- Descuentos -->
+                <div class="mb-3 form-row">
+                    <h5 class="me-3 mb-0">Descuento por pronto pago (%):</h5>
+                    <input type="number" id="descuentoProntoPago" class="form-control" style="max-width: 125px;"
+                        value="0" step="0.01" min="0" max="100">
+                </div>
+                <!-- Días para pronto pago -->
+                <div class="mb-3 form-row">
+                    <h5 class="me-3 mb-0">Días para pronto pago:</h5>
+                    <input type="number" id="diasProntoPago" class="form-control" style="max-width: 125px;" value="0">
+                </div>
+            </div>
+        </div>
+        <!-- Configuración adicional -->
+        <div class="card mb-3">
+            <div class="card-header bg-primary text-white rounded-3 mb-4">
+                <h5 class="fw-bold mb-0">Configuración Adicional</h5>
+            </div>
+            <div class="card-body checkbox-danger filled-checkbox">
+                <!-- Requiere Autorización -->
+                <div class="form-check checkbox-solid-warning">
+                    <input class="form-check-input" id="autorizacion" type="checkbox" unchecked="">
+                    <h5 class="form-check-label" for="autorizacion">Requiere Autorización </h5>
+                </div>
+                <div class="mb-3 form-row">
+                    <h5 class="me-3 mb-0">Notas adicionales:</h5>
+                    <textarea id="notas" class="form-control" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- Botones -->
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-primary">Guardar y agregar otro</button>
+            <button type="button" class="btn btn-primary">Guardar y continuar editando</button>
+        </div>
+
+    </form>
+</div>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">

@@ -1,0 +1,72 @@
+<h2>Gestión de Categorías</h2>
+
+<div class="container-fluid">
+    <div class="card shadow-sm border-0 rounded-4 p-3">
+
+        <!-- Título de la tarjeta -->
+        <div class="card-header bg-primary text-white rounded-3 mb-4">
+            <h3 class="fw-bold mb-0">Selecciona la categoría a modificar</h3>
+        </div>
+
+        <!-- Barra de búsqueda y botones -->
+        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+            <form class="d-flex align-items-center gap-2 mb-2 mb-md-0">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input class="form-control" type="text" placeholder="Buscar..." style="min-width: 250px;">
+                <button class="btn btn-outline-primary"><i data-feather="upload"></i> Buscar</button>
+            </form>
+
+            <div class="d-flex gap-2">
+                <a href="#" class="btn btn-primary" data-page="pages/agregar_categoria.html"><i data-feather="plus-square"></i> Agregar Categoría</a>
+            </div>
+        </div>
+
+        <!-- Tabla -->
+        <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+                <h4 class="me-3">Acción:</h4>
+                <!-- Lista desplegable de acciones -->
+                <select class="form-select w-auto me-2">
+                    <option selected disabled>Seleccione una acción</option>
+                    <option value="editar">Editar</option>
+                    <option value="eliminar">Eliminar</option>
+                    <option value="activar">Activar</option>
+                    <option value="desactivar">Desactivar</option>
+                </select>
+
+                <!-- Botón para ejecutar la acción -->
+                <button class="btn btn-primary">Aplicar</button>
+            </div>
+
+            <!-- Tabla para mostrar marcas -->
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>CÓDIGO</th>
+                            <th>NOMBRE</th>
+                            <th>CATEGORÍA PADRE</th>
+                            <th>IMAGEN</th>
+                            <th>ORDEN</th>
+                            <th>ACTIVA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Ejemplo de fila (En teoría se puede hacer dinámico aquí desde la base de datos) -->
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><a href="#">ARGAN-01</a></td>
+                            <td>ARGAN</td>
+                            <td>-</td>
+                            <td>Sin Imagen</td>
+                            <td>1</td>
+                            <td><span class="text-success">&#10003;</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
