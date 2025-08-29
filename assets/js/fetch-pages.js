@@ -42,3 +42,19 @@ function inicializarBotonHoy() {
         });
     }
 }
+
+  // JavaScript para la funcionalidad de movimiento
+  function moveSelected(sourceId, destinationId) {
+    const sourceList = document.getElementById(sourceId);
+    const destinationList = document.getElementById(destinationId);
+
+    // Recorre las opciones de la lista de origen de atrás hacia adelante
+    for (let i = sourceList.options.length - 1; i >= 0; i--) {
+      const option = sourceList.options[i];
+
+      // Si la opción está seleccionada, muévela a la lista de destino
+      if (option.selected) {
+        destinationList.appendChild(option);
+      }
+    }
+  }

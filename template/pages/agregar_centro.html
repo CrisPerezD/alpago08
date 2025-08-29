@@ -1,0 +1,238 @@
+<style>
+  .form-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* Espacio entre h4 e input */
+    padding-bottom: 0.5rem;
+    /* Espacio antes de la línea */
+    margin-bottom: 0.5rem;
+    /* Espacio después de la línea */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* Línea gris clara */
+  }
+
+  /* El ancho de todos los h4 será igual al del más largo */
+  .form-row h5 {
+    flex: 0 0 auto;
+    /* No se expande */
+    min-width: 170px;
+    /* Ajusta según el más largo */
+    margin: 0;
+    /* Elimina márgenes extra */
+  }
+
+  /* Los inputs ocuparán todo el espacio sobrante */
+  .form-row .form-control,
+  .form-row textarea,
+  .form-row select {
+    flex: 1 1 auto;
+    max-width: 300px;
+  }
+
+  /* Quitar línea en el último elemento */
+  .form-row:last-child {
+    border-bottom: none;
+  }
+
+  .page-body {
+    padding: 1px !important;
+  }
+
+  .page-title {
+    margin-bottom: 1px;
+    /* ajusta según necesites */
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+
+  .breadcrumb {
+    margin-top: 1;
+    margin-bottom: 1px;
+  }
+
+  form.theme-form {
+    margin-top: 1px;
+  }
+
+  /* Espacio ligero entre botones dentro del btn-group */
+  .btn-group .btn:not(:first-child) {
+    margin-left: 8px !important;
+    /* Ajusta el valor si quieres más o menos espacio */
+  }
+
+  /* CSS para el estilo del dual box */
+  .dual-listbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .dual-listbox .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dual-listbox select {
+    width: 200px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+  }
+
+  .dual-listbox button {
+    width: 40px;
+    margin: 5px 0;
+  }
+</style>
+
+<div class="page-body">
+  <div class="container-fluid">
+    <div class="page-title">
+      <div class="row">
+        <div class="col-sm-6 col-12">
+          <!-- Título principal -->
+        </div>
+        <div class="col-sm-6 col-12">
+          <!-- Breadcrumb -->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html"><i class="iconly-Home icli svg-color"></i></a></li>
+            <li class="breadcrumb-item active">Agregar Centro</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="theme-form">
+    <!-- Información Básica -->
+    <div class="card mb-4 shadow-sm border-0 rounded-4">
+      <div class="card-header bg-primary text-white">
+        <h4 class="fw-bold mb-0">Agregar Centro</h4>
+      </div>
+      <div class="card-body">
+
+        <!-- Nombre -->
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Nombre:</h5>
+          <div class="col-md-5">
+            <input type="text" id="nombreCentro" class="form-control" style="max-width: 400px;">
+          </div>
+        </div>
+
+        <!-- Tipo -->
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Tipo:</h5>
+          <div class="col-md-5 d-flex align-items-center gap-2">
+            <select class="form-select">
+              <option selected>Seleccione un tipo</option>
+              <option>Tipo 1</option>
+              <option>Tipo 2</option>
+              <option>Tipo 3</option>
+            </select>
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-secondary ms-1" title="Editar"><i
+                  class="bi bi-pencil"></i></button>
+              <button type="button" class="btn btn-outline-success ms-1" title="Agregar"><i
+                  class="bi bi-plus-lg"></i></button>
+              <button type="button" class="btn btn-outline-danger ms-1" title="Eliminar"><i
+                  class="bi bi-trash"></i></button>
+              <button type="button" class="btn btn-outline-info ms-1" title="Ver"><i class="bi bi-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dirección -->
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Dirección:</h5>
+          <div class="col-md-5">
+            <textarea id="direccion" class="form-control" rows="3" placeholder="" style="max-width: 600px;"></textarea>
+          </div>
+        </div>
+
+        <!-- Teléfono -->
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Teléfono:</h5>
+          <div class="col-md-5">
+            <input type="text" id="telefono" class="form-control" style="max-width: 400px;">
+          </div>
+        </div>
+
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Email</h5>
+          <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId"
+            placeholder="abc@mail.com" style="max-width: 400px;" />
+          <small id="emailHelpId" class="form-text text-muted"></small>
+        </div>
+
+        <!-- Estado Activa -->
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Estado:</h5>
+          <div class="col-md-5">
+            <select class="form-select" id="estadoSelect">
+              <option value="activo" selected>Activo</option>
+              <option value="inactivo">Inactivo</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Descripción -->
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Descripción:</h5>
+          <div class="col-md-5">
+            <textarea id="descripcion" class="form-control" rows="3" placeholder=""
+              style="max-width: 600px;"></textarea>
+          </div>
+        </div>
+
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Sitio web:</h5>
+          <div class="col-md-5">
+            <input type="text" id="sitioWeb" class="form-control" style="max-width: 400px;">
+          </div>
+        </div>
+
+
+        <div class="container mt-5">
+          <div class="mb-3 form-row">
+            <h5 class="me-3 mb-0">Usuarios:</h5>
+            <div class="col-md-5">
+              <div class="dual-listbox">
+                <div>
+                  <label>Usuarios disponibles</label><br>
+                  <select id="availableUsers" multiple size="10">
+                    <option value="1">admin</option>
+                    <option value="2">usuario1</option>
+                    <option value="3">usuario2</option>
+                    <option value="4">usuario3</option>
+                    <option value="5">usuario4</option>
+                    <option value="6">usuario5</option>
+                    <option value="7">usuario6</option>
+                  </select>
+                </div>
+
+                <div class="buttons">
+                  <button type="button" class="btn btn-primary"
+                    onclick="moveSelected('availableUsers', 'chosenUsers')">&gt;</button><br>
+                  <button type="button" class="btn btn-primary"
+                    onclick="moveSelected('chosenUsers', 'availableUsers')">&lt;</button>
+                </div>
+
+                <div>
+                  <label>Usuarios elegidos</label>
+                  <select id="chosenUsers" multiple size="10"></select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Botones -->
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-success">Salvar</button>
+          <button type="submit" class="btn btn-success">Salvar y agregar otro</button>
+          <button type="submit" class="btn btn-success">Salvar y continuar editando</button>
+        </div>
+  </form>
+</div>
