@@ -1,0 +1,213 @@
+<style>
+  .form-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* Espacio entre h4 e input */
+    padding-bottom: 0.5rem;
+    /* Espacio antes de la línea */
+    margin-bottom: 0.5rem;
+    /* Espacio después de la línea */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* Línea gris clara */
+  }
+
+  /* El ancho de todos los h4 será igual al del más largo */
+  .form-row h5 {
+    flex: 0 0 auto;
+    /* No se expande */
+    min-width: 170px;
+    /* Ajusta según el más largo */
+    margin: 0;
+    /* Elimina márgenes extra */
+  }
+
+  /* Los inputs ocuparán todo el espacio sobrante */
+  .form-row .form-control,
+  .form-row textarea,
+  .form-row select {
+    flex: 1 1 auto;
+    max-width: 300px;
+  }
+
+  /* Quitar línea en el último elemento */
+  .form-row:last-child {
+    border-bottom: none;
+  }
+
+  .page-body {
+    padding: 1px !important;
+  }
+
+  .page-title {
+    margin-bottom: 1px;
+    /* ajusta según necesites */
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+
+  .breadcrumb {
+    margin-top: 1;
+    margin-bottom: 1px;
+  }
+
+  form.theme-form {
+    margin-top: 1px;
+  }
+
+  /* Espacio ligero entre botones dentro del btn-group */
+  .btn-group .btn:not(:first-child) {
+    margin-left: 8px !important;
+    /* Ajusta el valor si quieres más o menos espacio */
+  }
+
+  /* CSS para el estilo del dual box */
+  .dual-listbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .dual-listbox .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dual-listbox select {
+    width: 300px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+  }
+
+  /* También ajustamos el ancho de los inputs de filtro */
+  .dual-listbox .form-control {
+    width: 300px;
+    /* El mismo ancho que los listbox */
+  }
+
+  .dual-listbox button {
+    width: 40px;
+    margin: 2px 0;
+  }
+
+  .dual-listbox label.card-header {
+    display: block;
+    /* Asegura que el label ocupe todo el ancho */
+    text-align: center;
+    /* Centra el texto */
+    border-radius: 0.25rem 0.25rem 0 0;
+    /* Bordes redondeados solo en la parte superior */
+    background-color: #407690 !important;
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+</style>
+
+<div class="page-body">
+    <div class="container-fluid">
+        <div class="page-title">
+            <div class="row">
+                <div class="col-sm-6 col-12">
+                    <!-- Título principal -->
+                </div>
+                <div class="col-sm-6 col-12">
+                    <!-- Breadcrumb -->
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="iconly-Home icli svg-color"></i></a>
+                        </li>
+                        <li class="breadcrumb-item active">Seleccionar Concepto de Pago a Cambiar</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="card shadow-sm border-0 rounded-4 p-3">
+
+            <!-- Título de la tarjeta -->
+            <div class="card-header bg-primary text-white rounded-3 mb-4">
+                <h3 class="fw-bold mb-0">Selecciona Concepto de Pago a Cambiar</h3>
+            </div>
+
+            <!-- Barra de búsqueda y botones -->
+            <div class="d-flex flex-wrap align-items-center justify-content-between mb-2">
+                <form class="d-flex align-items-center gap-2 mb-2 mb-md-0">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input class="form-control" type="text" placeholder="Buscar..." style="min-width: 250px;">
+                    <button class="btn btn-outline-primary"><i data-feather="arrow-right"></i></button>
+                </form>
+
+                <div class="d-flex gap-2">
+                    <a href="#" data-page="pages/agregar_centro.html" class="btn btn-success" id="btnAgregar">
+                        <i data-feather="plus-square"></i> Agregar Concepto de Pago
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tabla -->
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <h4 class="me-3">Acción:</h4>
+                    <select class="form-select w-auto me-2">
+                        <option selected disabled>Seleccione una acción</option>
+                        <option value="editar">Editar</option>
+                        <option value="eliminar">Eliminar</option>
+                        <option value="activar">Activar</option>
+                        <option value="desactivar">Desactivar</option>
+                    </select>
+                    <button class="btn btn-success">Aplicar</button>
+                    <span class="ms-3">Registros seleccionados: <b id="selectedCount">0</b></span>
+                </div>
+
+                <!-- Tabla para mostrar documentos -->
+                <div class="table-responsive">
+                    <table id="tablaDocumentos" class="table table-bordered table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th><input type="checkbox" id="selectAllCheckbox" onclick="selectAllRows()"></th>
+                                <th>NOMBRE</th>
+                                <th>MONTO</th>
+                                <th>CENTRO</th>
+                                <th>FECHA DE CREACIÓN</th>
+                                <th>ACTIVO</th>                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="row-checkbox" onclick="updateSelectedCount()"></td>
+                                <td><a href="#">Uniformes</a></td>
+                                <td>$1,200.00</td>
+                                <td>Le Dance - Escuela</td>
+                                <td>March 12, 2025, 12:54 a.m.</td>
+                                <td class="text-center inactive-status"><i data-feather="check" class="text-bg-success"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="row-checkbox" onclick="updateSelectedCount()"></td>
+                                <td><a href="#">Colegiatura</a></td>
+                                <td>$1,170.00</td>
+                                <td>Le Dance - Escuela</td>
+                                <td>March 12, 2025, 12:54 a.m.</td>
+                                <td class="text-center inactive-status"><i data-feather="check" class="text-bg-success"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="row-checkbox" onclick="updateSelectedCount()"></td>
+                                <td><a href="#">Inscripción</a></td>
+                                <td>$1,200.00</td>
+                                <td>Le Dance - Escuela</td>
+                                <td>March 12, 2025, 12:53 a.m.</td>
+                                <td class="text-center inactive-status"><i data-feather="check" class="text-bg-success"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                        <!-- Contador -->
+                        <div class="table-info mt-3">
+                            <span>Total de registros: <b id="totalRecords">0</b></span>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
