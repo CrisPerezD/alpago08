@@ -1,0 +1,166 @@
+<style>
+    .form-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        /* Espacio entre h4 e input */
+        padding-bottom: 0.5rem;
+        /* Espacio antes de la línea */
+        margin-bottom: 0.5rem;
+        /* Espacio después de la línea */
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        /* Línea gris clara */
+    }
+
+    /* El ancho de todos los h4 será igual al del más largo */
+    .form-row h5 {
+        flex: 0 0 auto;
+        /* No se expande */
+        min-width: 170px;
+        /* Ajusta según el más largo */
+        margin: 0;
+        /* Elimina márgenes extra */
+    }
+
+    /* Los inputs ocuparán todo el espacio sobrante */
+    .form-row .form-control,
+    .form-row textarea,
+    .form-row select {
+        flex: 1 1 auto;
+        max-width: 300px;
+    }
+
+    /* Quitar línea en el último elemento */
+    .form-row:last-child {
+        border-bottom: none;
+    }
+
+    .page-body {
+        padding: 1px !important;
+    }
+
+    .page-title {
+        margin-bottom: 1px;
+        /* ajusta según necesites */
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+
+    .breadcrumb {
+        margin-top: 1;
+        margin-bottom: 1px;
+    }
+
+    form.theme-form {
+        margin-top: 1px;
+    }
+
+    /* Espacio ligero entre botones dentro del btn-group */
+    .btn-group .btn:not(:first-child) {
+        margin-left: 8px !important;
+        /* Ajusta el valor si quieres más o menos espacio */
+    }
+
+    /* CSS para el estilo del dual box */
+    .dual-listbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .dual-listbox .buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dual-listbox select {
+        width: 300px;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+    }
+
+    /* También ajustamos el ancho de los inputs de filtro */
+    .dual-listbox .form-control {
+        width: 300px;
+        /* El mismo ancho que los listbox */
+    }
+
+    .dual-listbox button {
+        width: 40px;
+        margin: 2px 0;
+    }
+
+    .dual-listbox label.card-header {
+        display: block;
+        /* Asegura que el label ocupe todo el ancho */
+        text-align: center;
+        /* Centra el texto */
+        border-radius: 0.25rem 0.25rem 0 0;
+        /* Bordes redondeados solo en la parte superior */
+        background-color: #407690 !important;
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+</style>
+
+<div class="page-body">
+    <div class="container-fluid">
+        <div class="page-title">
+            <div class="row">
+                <div class="col-sm-6 col-12">
+                    <!-- Título principal -->
+                </div>
+                <div class="col-sm-6 col-12">
+                    <!-- Breadcrumb -->
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="iconly-Home icli svg-color"></i></a>
+                        </li>
+                        <li class="breadcrumb-item active">Agregar Concepto de Pago</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-1">
+        <form>
+            <div class="card">
+                <div class="card-header bg-primary text-white rounded-3 mb-4">
+                    <h4 class="fw-bold mb-0">Agregar Concepto de Pago</h4>
+                </div>
+                <div class="card-body">
+
+                    <div class="mb-3 d-flex align-items-center form-row">
+                        <h4 class="me-3 mb-0" style="min-width: 170px;">Nombre:</h4>
+                        <input type="text" id="nombreDepartamento" class="form-control">
+                    </div>
+
+                    <div class="mb-3 d-flex align-items-center form-row">
+                        <h4 class="me-3 mb-0" style="min-width: 170px;">Monto:</h4>
+                        <input type="text" id="monto" class="form-control">
+                    </div>
+
+                    <div class="mb-3 d-flex align-items-center form-row">
+                        <h4 class="me-3 mb-0" style="min-width: 170px;">Descripción:</h4>
+                        <textarea id="descripcion" rows="3" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-check">                        
+                            <input type="checkbox" class="form-check-input" style="background-color: green;" id="Activo" checked>
+                            <label for="Activo" class="form-check-label">Activo</label>                        
+                    </div>
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-success">Guardar</button>
+                        <button type="button" class="btn btn-success">Guardar y agregar otro</button>
+                        <button type="button" class="btn btn-success">Guardar y continuar editando</button>
+                    </div>
+                </div>                
+            </div>            
+        </form>
+    </div>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</div>
