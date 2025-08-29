@@ -1,0 +1,328 @@
+<style>
+  .form-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* Espacio entre h4 e input */
+    padding-bottom: 0.5rem;
+    /* Espacio antes de la línea */
+    margin-bottom: 0.5rem;
+    /* Espacio después de la línea */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* Línea gris clara */
+  }
+
+  /* El ancho de todos los h4 será igual al del más largo */
+  .form-row h5 {
+    flex: 0 0 auto;
+    /* No se expande */
+    min-width: 190px;
+    /* Ajusta según el más largo */
+    margin: 0;
+    /* Elimina márgenes extra */
+  }
+
+  /* Los inputs ocuparán todo el espacio sobrante */
+  .form-row .form-control,
+  .form-row textarea,
+  .form-row select {
+    flex: 1 1 auto;
+    max-width: 300px;
+  }
+
+  /* Quitar línea en el último elemento */
+  .form-row:last-child {
+    border-bottom: none;
+  }
+
+  .page-body {
+    padding: 1px !important;
+  }
+
+  .page-title {
+    margin-bottom: 1px;
+    /* ajusta según necesites */
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+
+  .breadcrumb {
+    margin-top: 1;
+    margin-bottom: 1px;
+  }
+
+  form.theme-form {
+    margin-top: 1px;
+  }
+
+  /* Espacio ligero entre botones dentro del btn-group */
+  .btn-group .btn:not(:first-child) {
+    margin-left: 8px !important;
+    /* Ajusta el valor si quieres más o menos espacio */
+  }
+
+  /* CSS para el estilo del dual box */
+  .dual-listbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .dual-listbox .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dual-listbox select {
+    width: 300px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+  }
+
+  /* También ajustamos el ancho de los inputs de filtro */
+  .dual-listbox .form-control {
+    width: 300px;
+    /* El mismo ancho que los listbox */
+  }
+
+  .dual-listbox button {
+    width: 40px;
+    margin: 2px 0;
+  }
+
+  .dual-listbox label.card-header {
+    display: block;
+    /* Asegura que el label ocupe todo el ancho */
+    text-align: center;
+    /* Centra el texto */
+    border-radius: 0.25rem 0.25rem 0 0;
+    /* Bordes redondeados solo en la parte superior */
+    background-color: #407690 !important;
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+</style>
+
+<div class="page-body">
+  <div class="container-fluid">
+    <div class="page-title">
+      <div class="row">
+        <div class="col-sm-6 col-12">
+          <!-- Título principal -->
+        </div>
+        <div class="col-sm-6 col-12">
+          <!-- Breadcrumb -->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html"><i class="iconly-Home icli svg-color"></i></a></li>
+            <li class="breadcrumb-item active">Agregar Tutor</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="theme-form">
+    <!-- Información Básica -->
+    <div class="card mb-4 shadow-sm border-0 rounded-4">
+      <div class="card-header bg-primary text-white">
+        <h4 class="fw-bold mb-0">Agregar Tutor</h4>
+      </div>
+      <div class="card-body">
+
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Usuario:</h5>
+          <div class="col-md-5 d-flex align-items-center gap-2">
+            <select class="form-select">
+              <option selected>-----------</option>
+              <option>Usuario 1</option>
+              <option>Usuario 2</option>
+              <option>Usuario 3</option>
+              <option>Admin</option>
+            </select>
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-secondary ms-1" title="Editar"><i
+                  class="bi bi-pencil"></i></button>
+              <button type="button" class="btn btn-outline-success ms-1" title="Agregar"><i
+                  class="bi bi-plus-lg"></i></button>
+              <button type="button" class="btn btn-outline-info ms-1" title="Ver"><i class="bi bi-eye"></i></button>
+            </div>
+          </div>
+        </div>
+        <!-- Nombre -->
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Nombre(s):</h5>
+          <div class="col-md-5">
+            <input type="text" id="nombreTutor" class="form-control" style="max-width: 400px;">
+          </div>
+        </div>
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Apellidos:</h5>
+          <div class="col-md-5">
+            <input type="text" id="apellidosTutor" class="form-control" style="max-width: 400px;">
+          </div>
+        </div>
+
+        <!-- Tipo de Relación-->
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Tipo de Relación:</h5>
+          <div class="col-md-5 d-flex align-items-center gap-2">
+            <select class="form-select">
+              <option selected>-----------</option>
+              <option>Padre</option>
+              <option>Madre</option>
+              <option>Hermano</option>
+              <option>Hermana</option>
+              <option>Tío</option>
+              <option>Tía</option>
+              <option>Abuelo</option>
+              <option>Abuela</option>
+              <option>Otro</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Género:</h5>
+          <div class="col-md-5 d-flex align-items-center gap-2">
+            <select class="form-select">
+              <option selected>------------</option>
+              <option>Masculino</option>
+              <option>Femenino</option>
+              <option>Otro</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Teléfono -->
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Teléfono:</h5>
+          <div class="col-md-5">
+            <input type="tel" id="telefono" class="form-control" style="max-width: 400px;">
+          </div>
+        </div>
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Celular:</h5>
+          <div class="col-md-5">
+            <input type="tel" id="celular" class="form-control" style="max-width: 400px;">
+          </div>
+        </div>
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Email</h5>
+          <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId"
+            placeholder="abc@mail.com" style="max-width: 400px;" />
+          <small id="emailHelpId" class="form-text text-muted"></small>
+        </div>
+        <!-- Dirección -->
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Dirección:</h5>
+          <div class="col-md-5">
+            <textarea id="direccion" class="form-control" rows="3" placeholder="" style="max-width: 600px;"></textarea>
+          </div>
+        </div>
+
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Ocupación:</h5>
+          <div class="col-md-5">
+            <input type="text" id="ocupacionTutor" class="form-control" style="max-width: 400px;">
+          </div>
+        </div>
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Lugar de Trabajo:</h5>
+          <div class="col-md-5">
+            <input type="text" id="lugarTrabajoTutor" class="form-control" style="max-width: 400px;">
+          </div>
+        </div>
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Teléfono de Trabajo:</h5>
+          <div class="col-md-5">
+            <input type="tel" id="telefonoTrabajoTutor" class="form-control" style="max-width: 400px;">
+          </div>
+        </div>
+        <div class="form-check form-row">
+          <input type="checkbox" class="form-check-input" style="background-color: none;" id="contactoEmergenciaTutor"
+            unchecked>
+          <label for="contactoEmergenciaTutor" class="form-check-label">Contacto de Emergencia</label>
+        </div>
+        <div class="form-check  form-row">
+          <input type="checkbox" class="form-check-input" style="background-color: none;" id="puedeRecogerAlumnosTutor"
+            unchecked>
+          <label for="puedeRecogerAlumnosTutor" class="form-check-label">Puede recoger alumnos</label>
+        </div>
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Tipo de Identificación:</h5>
+          <div class="col-md-5">
+            <input type="text" id="tipoIdentificacionTutor" class="form-control" style="max-width: 400px;">
+          </div>
+        </div>
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Número de Identificación:</h5>
+          <div class="col-md-5">
+            <input type="text" id="numeroIdentificacionTutor" class="form-control" style="max-width: 400px;">
+          </div>
+        </div>
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Notas:</h5>
+          <div class="col-md-5">
+            <textarea id="notasTutor" class="form-control" rows="3" placeholder="" style="max-width: 600px;"></textarea>
+          </div>
+        </div>
+        <!-- Estado Activa -->
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Estado:</h5>
+          <div class="col-md-5">
+            <select class="form-select" id="estadoSelect">
+              <option value="activo" selected>Activo</option>
+              <option value="inactivo">Inactivo</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="mb-3 form-row">
+          <h5 class="me-3 mb-0">Alumnos:</h5>
+          <div class="col-md-5">
+            <div class="dual-listbox">
+              <div>
+                <label class="card-header bg-primary text-white">Alumnos disponibles</label>
+                <input type="text" id="filterAvailable" class="form-control mb-2" placeholder="Filtrar..."
+                  onkeyup="filterListbox('filterAvailable', 'availableUsers')">
+                <select id="availableUsers" multiple size="10">
+                  <option value="1">Pedro</option>
+                  <option value="2">Juan</option>
+                  <option value="3">Chano</option>
+                  <option value="4">Gregorio</option>
+                  <option value="5">Sandra</option>
+                  <option value="6">Sofía</option>
+                  <option value="7">Chana</option>
+                </select>
+                <button type="button" class="btn btn-outline-secondary mt-2 w-100"
+                  onclick="selectAll('availableUsers')">Seleccionar todos</button>
+              </div>
+
+              <div class="buttons">
+                <button type="button" class="btn btn-outline-primary"
+                  onclick="moveSelected('availableUsers', 'chosenUsers')">&gt;</button><br>
+                <button type="button" class="btn btn-outline-primary"
+                  onclick="moveSelected('chosenUsers', 'availableUsers')">&lt;</button>
+              </div>
+
+              <div>
+                <label class="card-header bg-primary text-white">Alumnos Agregados</label>
+                <input type="text" id="filterChosen" class="form-control mb-2" placeholder="Filtrar..."
+                  onkeyup="filterListbox('filterChosen', 'chosenUsers')">
+                <select id="chosenUsers" multiple size="10"></select>
+                <button type="button" class="btn btn-outline-warning mt-2 w-100"
+                  onclick="selectAll('chosenUsers')">Remover todos</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botones -->
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-success">Salvar</button>
+          <button type="submit" class="btn btn-success">Salvar y agregar otro</button>
+          <button type="submit" class="btn btn-success">Salvar y continuar editando</button>
+        </div>
+  </form>
+</div>
